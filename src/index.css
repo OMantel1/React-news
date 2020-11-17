@@ -85,3 +85,20 @@ button {
 button:hover {
   background-color: #2e5fff;
 }
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 8px 24px;
+}
+.filter__button {
+ border: solid grey 1px;
+ border-radius: 10px;
+ padding: 0 12px;
+ margin: 2px;
+ background-color: white;
+}
+.filter__button:hover {
+  background-color: rgb(208, 208, 208);
+  cursor: pointer;
+}
