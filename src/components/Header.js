@@ -3,9 +3,9 @@ import React from "react";
 class Header extends React.Component {
   render() {
     return (
-      <header>
+      <header className="header  colored-bg">
         <h1>NEWS</h1>
-        <p>A React app with news fetched from news api</p>
+        <p>News fetched from NewsApi</p>
       </header>
     );
   }
