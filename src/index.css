@@ -1,32 +1,33 @@
 body {
   min-height: 100vh;
-  margin: 0;
+  margin: auto;
   background-color: var(--color-light);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  position: relative;
   --color-primary: #e55039;
   --color-light: #f0f0f0;
 }
+
 a {
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
 }
+.colored-bg {
+  background-color: var(--color-primary);
+  color: white;
+}
 
 /************ Header ************/
 header {
-  background-color: var(--color-primary);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 8px;
-  line-height: 18px;
-  color: white;
   text-transform: uppercase;
 }
 header h1 {
@@ -41,32 +42,32 @@ header h1 {
   margin: auto;
 }
 
-/************ Article ************/
-.article__title,
-.article p,
-.article__content {
+/************ Resume ************/
+.resume__title,
+.resume p,
+.resume__content {
   padding: 0px 12px;
 }
 
-.article__title {
+.resume__title {
   font-size: 16px;
   font-weight: normal;
 }
-.article__title a {
+.resume__title a {
   color: #505050;
 }
 
-.article__title a:hover {
+.resume__title a:hover {
   color: #262626;
 }
 
-.article-list {
+.resume-list {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-.article__img {
+.resume__img {
   box-sizing: border-box;
   width: 280px;
   height: 100%;
@@ -75,17 +76,17 @@ header h1 {
   background-color: #ffffff;
 }
 
-.article__source {
+.resume__source {
   text-align: right;
   font-size: 14px;
   color: var(--color-primary);
 }
-.article__content {
+.resume__content {
   font-size: 14px;
   color: #808080;
 }
 
-.article {
+.resume {
   border-radius: 2px;
   max-width: 280px;
   min-width: 280px;
@@ -93,6 +94,41 @@ header h1 {
   grid-template-rows: 180px 80px 1fr 35px;
   background-color: white;
   margin-bottom: 90px;
+}
+
+/*********** Article **********/
+.article {
+  max-width: 600px;
+  border: solid rgb(196, 196, 196) 1px;
+  border-radius: 4px;
+  margin: 20px auto;
+  flex: 1;
+}
+.article__img {
+  width: 100%;
+  height: auto;
+}
+.article__title {
+  color: #505050;
+  font-weight: 600;
+}
+.article__text {
+  padding: 16px;
+}
+.article__date,
+.article__link {
+  font-size: 14px;
+}
+.article__link {
+  color: var(--color-primary);
+}
+.article__links {
+  display: flex;
+  justify-content: space-between;
+}
+.article__content {
+  font-size: 16px;
+  color: #808080;
 }
 
 /********** filters **********/
@@ -118,22 +154,4 @@ header h1 {
 
 .selectedColor {
   background-color: red;
-}
-
-/******** footer **********/
-.footer {
-  width: 100%;
-  color: white;
-  background-color: var(--color-primary);
-  padding: 0 24px;
-  position: absolute;
-  bottom: 0;
-}
-.footer a {
-  color: white;
-}
-
-.footer ul {
-  padding: 0;
-  list-style-type: none;
 }
