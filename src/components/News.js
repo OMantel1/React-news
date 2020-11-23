@@ -71,10 +71,10 @@ class News extends React.Component {
         </div>
 
         <h2>DERNIERS ARTICLES</h2>
-        <div className="article-list">
-          {articlesList.map((article) => (
+        <div className="resume-list">
+          {articlesList.map((article, index) => (
             <ArticleResume
-              key={article.title}
+              key={index}
               title={article.title}
               image={article.urlToImage}
               description={article.description}
