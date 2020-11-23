@@ -1,6 +1,7 @@
 ## React news app
 
 Project in progress
+
 Api used:  https://newsapi.org/ 
 
 # Getting Started with Create React App
