@@ -30,8 +30,9 @@ class Article extends React.Component {
     return (
       <div className="container">
         {this.state.articles.map((x) => {
+          let result;
           if (x.source.name === source && x.publishedAt === sourceDate) {
-            return (
+            result =
               <div className="article">
                 <img className="article__img" src={x.urlToImage} alt={x.title}/>
                 <div className="article__text">
@@ -56,8 +57,9 @@ class Article extends React.Component {
                   </div>
                 </div>
               </div>
-            );
+            ;
           }
+          return result
         })}
       </div>
     );
