@@ -9,9 +9,7 @@ class Article extends React.Component {
     };
   }
   componentDidMount() {
-    fetch(
-      "http://newsapi.org/v2/top-headlines?country=fr&apiKey=156ffdbdcc3b49fe83f4e1e4d12c9c85"
-    )
+    fetch(process.env.REACT_APP_API_KEY_V2)
       .then((response) => response.json())
       .then((result) => {
         this.setState({
