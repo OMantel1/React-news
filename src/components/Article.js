@@ -47,7 +47,7 @@ class Article extends React.Component {
                   </p>
                   <h2 className="article__title">{x.title}</h2>
                   <p className="article__content">{x.content}</p>
-                  <div className="article__links">
+                  <div className="article__footer">
                     <a className="article__link" href={x.url} target="_blank" rel="noreferrer">
                       lire l'article original
                     </a>

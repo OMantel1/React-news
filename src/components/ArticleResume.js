@@ -12,7 +12,19 @@ class ArticleResume extends React.Component {
                 </h2>
 
                 <p className=" resume__content  border">{this.props.description}</p>
-                <p className=" resume__source  border"><i>{this.props.source}</i></p>
+                <div className="article__footer">
+                    <p className="article__date">
+                        {this.props.date
+                        .split("")
+                        .splice(0, 10)
+                        .join("")
+                        .split("-")
+                        .reverse()
+                        .join(".")}{" "}
+                        à {this.props.date.split("").splice(11, 5)}
+                    </p>
+                    <p className=" resume__source  border"><i>{this.props.source}</i></p>
+                </div>
 
             </div>
         )
