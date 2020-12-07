@@ -7,7 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --color-primary: #e55039;
+  --color-primary: #d52222;
   --color-light: #f0f0f0;
 }
 
@@ -17,23 +17,20 @@ a {
 a:hover {
   text-decoration: underline;
 }
-.colored-bg {
-  background-color: var(--color-primary);
-  color: white;
-}
 
 /************ Header ************/
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 8px;
+  padding: 0 16px;
   text-transform: uppercase;
+  background-color: white;
 }
 header h1 {
-  font-size: 18px;
-  letter-spacing: 4px;
-  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: 8px;
+  font-weight: 700;
 }
 
 .news {
