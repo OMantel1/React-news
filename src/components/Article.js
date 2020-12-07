@@ -9,7 +9,7 @@ class Article extends React.Component {
     };
   }
   componentDidMount() {
-    fetch(process.env.REACT_APP_API_KEY_V2)
+    fetch("https://gnews.io/api/v4/top-headlines?token=" + process.env.REACT_APP_API_KEY + "&lang=en")
       .then((response) => response.json())
       .then((result) => {
         this.setState({
@@ -32,7 +32,7 @@ class Article extends React.Component {
           if (x.source.name === source && x.publishedAt === sourceDate) {
             result =
               <div className="article" key={index}>
-                <img className="article__img" src={x.urlToImage} alt={x.title}/>
+                <img className="article__img" src={x.image} alt={x.title}/>
                 <div className="article__text">
                   <p className="article__date">
                     le{" "}

@@ -91,7 +91,7 @@ header h1 {
   max-width: 280px;
   min-width: 280px;
   display: grid;
-  grid-template-rows: 180px 80px 1fr 35px;
+  grid-template-rows: 180px 70px 1fr 35px;
   background-color: white;
   margin-bottom: 90px;
 }
@@ -108,8 +108,11 @@ header h1 {
   width: 100%;
   height: auto;
 }
+.article__date,
 .article__title {
   color: #505050;
+}
+.article_title {
   font-weight: 600;
 }
 .article__text {
@@ -124,6 +127,7 @@ header h1 {
 }
 .article__footer {
   display: flex;
+  
   justify-content: space-between;
 }
 .article__content {

@@ -27,12 +27,12 @@ class News extends React.Component {
     }
   }
   componentDidMount() {
-    fetch(process.env.REACT_APP_API_KEY_V2)
+    fetch(
+      "https://gnews.io/api/v4/top-headlines?token=" + process.env.REACT_APP_API_KEY + "&lang=en")
       .then((response) => response.json())
-      .then((result) => {
-        console.log(result.articles);
+      .then((response) => {
         this.setState({
-          articles: result.articles,
+          articles: response.articles,
         });
       });
   }
@@ -74,7 +74,7 @@ class News extends React.Component {
             <ArticleResume
               key={index}
               title={article.title}
-              image={article.urlToImage}
+              image={article.image}
               description={article.description}
               date={article.publishedAt}
               source={article.source.name}

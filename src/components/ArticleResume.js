@@ -21,7 +21,6 @@ class ArticleResume extends React.Component {
                         .split("-")
                         .reverse()
                         .join(".")}{" "}
-                        à {this.props.date.split("").splice(11, 5)}
                     </p>
                     <p className=" resume__source  border"><i>{this.props.source}</i></p>
                 </div>
