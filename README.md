@@ -2,7 +2,7 @@
 
 Project in progress
 
-Api used:  https://newsapi.org/ 
+Api used:  https://gnews.io/
 
 # Getting Started with Create React App
 
