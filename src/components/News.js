@@ -30,7 +30,7 @@ class News extends React.Component {
   }
   componentDidMount() {
     fetch(
-      "https://ws.io/api/v4/top-headlines?token=" +
+      "https://gnews.io/api/v4/top-headlines?token=" +
         process.env.REACT_APP_API_KEY +
         "&lang=en"
     )
