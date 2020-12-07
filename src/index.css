@@ -41,6 +41,16 @@ header h1 {
   max-width: 1200px;
   margin: auto;
 }
+.loading{
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
 
 /************ Resume ************/
 .resume__title,

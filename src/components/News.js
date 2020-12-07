@@ -7,6 +7,7 @@ class News extends React.Component {
     this.state = {
       articles: [],
       filtered: false,
+      loading: true
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -28,15 +29,32 @@ class News extends React.Component {
   }
   componentDidMount() {
     fetch(
-      "https://gnews.io/api/v4/top-headlines?token=" + process.env.REACT_APP_API_KEY + "&lang=en")
-      .then((response) => response.json())
+      "https://gnews.io/api/v4/top-headlines?token=" +
+        process.env.REACT_APP_API_KEY +
+        "&lang=en"
+    )
+      .then((response) =>response.json())
       .then((response) => {
         this.setState({
           articles: response.articles,
+          loading: false
         });
+      })
+      .catch(() => {
+        this.setState({
+          loading: false
+        })
       });
+      
   }
   render() {
+
+    if(this.state.loading){
+      return <div className="loading">
+        Loading...
+      </div>
+    }
+
     let articlesList;
     let articleSourceList = this.state.articles.map(article => article.source.name);
     let filteredSourceList = [...new Set(articleSourceList)] //Remove duplicated sources
@@ -48,7 +66,7 @@ class News extends React.Component {
     } else {
       articlesList = this.state.articles;
     }
-
+    
     return (
       
       <div className="news">
