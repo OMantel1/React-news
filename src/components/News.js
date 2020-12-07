@@ -34,7 +34,12 @@ class News extends React.Component {
         process.env.REACT_APP_API_KEY +
         "&lang=en"
     )
-      .then((response) =>response.json())
+      .then((response) =>{
+        if(response.status === 429){
+          throw new Error("Trop de connexions aujourd'hui: le maximum de 100 request à été atteint")
+        }
+        response.json()
+      })
       .then((response) => {
         this.setState({
           articles: response.articles,
@@ -42,10 +47,11 @@ class News extends React.Component {
           loading: false
         });
       })
-      .catch(() => {
+      .catch(error => {
+        console.error(error)
         this.setState({
           hasError: true,
-          loading: false
+          loading: false,
         })
       });
       
@@ -59,7 +65,8 @@ class News extends React.Component {
     }
     if(this.state.hasError){
       return <div className="error">
-        Sorry! we can't find the page you looking for.
+        Sorry! we can't find the page you looking for.<br/>
+        Maybe more info in the console.
       </div>
     }
     let articlesList;
