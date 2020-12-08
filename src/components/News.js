@@ -32,7 +32,7 @@ class News extends React.Component {
     fetch(
       "https://gnews.io/api/v4/top-headlines?token=" +
         process.env.REACT_APP_API_KEY +
-        "&lang=en"
+        "&lang=fr"
     )
       .then((response) =>{
         if(response.status === 429){

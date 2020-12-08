@@ -9,7 +9,7 @@ class Article extends React.Component {
     };
   }
   componentDidMount() {
-    fetch("https://gnews.io/api/v4/top-headlines?token=" + process.env.REACT_APP_API_KEY + "&lang=en")
+    fetch("https://gnews.io/api/v4/top-headlines?token=" + process.env.REACT_APP_API_KEY + "&lang=fr")
       .then((response) => response.json())
       .then((result) => {
         this.setState({
