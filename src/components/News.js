@@ -38,7 +38,7 @@ class News extends React.Component {
         if(response.status === 429){
           throw new Error("Trop de connexions aujourd'hui: le maximum de 100 request à été atteint")
         }
-        response.json()
+        return response.json()
       })
       .then((response) => {
         this.setState({
