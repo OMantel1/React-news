@@ -38,8 +38,8 @@ header h1 {
   max-width: 1200px;
   margin: auto;
 }
-.error, 
-.loading{
+.error,
+.loading {
   font-size: 24px;
   display: flex;
   justify-content: center;
@@ -48,6 +48,38 @@ header h1 {
   position: absolute;
   top: 0px;
   width: 100%;
+}
+
+.loader {
+  display: flex;
+  padding-top: 6px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  color: blue;
+  background-color: rgb(214, 21, 21);
+  border-radius: 100%;
+  margin: 2px;
+  animation: dotJump 1250ms infinite 200ms;
+}
+.dot:first-child{
+  animation: dotJump 1250ms infinite;
+}
+.dot:last-child{
+  animation: dotJump 1250ms infinite 400ms;
+}
+
+@keyframes dotJump {
+  from {
+    transform: translatey(0px);
+  }
+  25% {
+    transform: translatey(-5px);
+  }
+  to {
+    transform: translatey(0px);
+  }
 }
 
 /************ Resume ************/
@@ -135,7 +167,7 @@ header h1 {
 }
 .article__footer {
   display: flex;
-  
+
   justify-content: space-between;
 }
 .article__content {

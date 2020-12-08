@@ -4,7 +4,12 @@ class LoadingMsg extends React.Component {
   render() {
     return (
       <div className="loading">
-        Loading...
+        <p className="loadingText">Loading</p>
+        <div className="loader">
+          <div className="dot"></div>
+          <div className="dot"></div>
+          <div className="dot"></div>
+        </div>
       </div>
     );
   }
