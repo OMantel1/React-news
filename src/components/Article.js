@@ -1,20 +1,37 @@
 import React from "react";
 import {Link} from 'react-router-dom'
+import ErrorMsg from "./ErrorMsg";
+import LoadingMsg from "./LoadingMsg";
 
 class Article extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       articles: [],
+      loading: true,
+      hasError: false
     };
   }
   componentDidMount() {
     fetch("https://gnews.io/api/v4/top-headlines?token=" + process.env.REACT_APP_API_KEY + "&lang=fr")
-      .then((response) => response.json())
+      .then((response) => {
+        if(response.ok){
+          return response.json()
+        }
+      })
       .then((result) => {
         this.setState({
           articles: result.articles,
+          loading: false,
+          hasError: false
         });
+      })
+      .catch(error => {
+        console.error(error)
+        this.setState({
+          hasError: true,
+          loading: false,
+        })
       });
   }
   render() {
@@ -25,6 +42,14 @@ class Article extends React.Component {
       .split("")
       .splice(1, sourceParams[0].length)
       .join("");
+
+    if(this.state.loading){
+      return <LoadingMsg/>
+    }
+    if(this.state.hasError){
+      return <ErrorMsg/>
+    }
+
     return (
       <div className="container">
         {this.state.articles.map((x, index) => {
