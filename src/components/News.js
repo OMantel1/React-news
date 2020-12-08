@@ -10,6 +10,7 @@ class News extends React.Component {
       articles: [],
       filtered: false,
       hasError: true,
+      errorMsg: "Sorry! we can't find the page you looking for.",
       loading: true
     };
     this.handleClick = this.handleClick.bind(this);
@@ -38,7 +39,7 @@ class News extends React.Component {
     )
       .then((response) =>{
         if(response.status === 429){
-          throw new Error("Trop de connexions aujourd'hui: le maximum de 100 request à été atteint")
+          throw new Error("We are sorry, the maximum of 100 requests by day has been reached. See you tomorrow!")
         }
         return response.json()
       })
@@ -54,6 +55,7 @@ class News extends React.Component {
         this.setState({
           hasError: true,
           loading: false,
+          errorMsg: error.message
         })
       });
       
@@ -64,7 +66,7 @@ class News extends React.Component {
       return <LoadingMsg/>
     }
     if(this.state.hasError){
-      return <ErrorMsg/>
+      return <ErrorMsg message={this.state.errorMsg}/>
     }
     let articlesList;
     let articleSourceList = this.state.articles.map(article => article.source.name);

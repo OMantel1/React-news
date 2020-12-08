@@ -48,6 +48,7 @@ header h1 {
   position: absolute;
   top: 0px;
   width: 100%;
+  text-align: center;
 }
 
 .loader {
