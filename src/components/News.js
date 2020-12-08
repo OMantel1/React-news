@@ -1,5 +1,7 @@
 import React from "react";
 import ArticleResume from "./ArticleResume";
+import ErrorMsg from "./ErrorMsg";
+import LoadingMsg from "./LoadingMsg";
 
 class News extends React.Component {
   constructor(props) {
@@ -59,15 +61,10 @@ class News extends React.Component {
   render() {
 
     if(this.state.loading){
-      return <div className="loading">
-        Loading...
-      </div>
+      return <LoadingMsg/>
     }
     if(this.state.hasError){
-      return <div className="error">
-        Sorry! we can't find the page you looking for.<br/>
-        Maybe more info in the console.
-      </div>
+      return <ErrorMsg/>
     }
     let articlesList;
     let articleSourceList = this.state.articles.map(article => article.source.name);
