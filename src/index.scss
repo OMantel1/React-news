@@ -1,5 +1,8 @@
 $color-primary: #d52222;
 $color-light: #f0f0f0;
+$color-text: #505050;
+$color-text-light: #808080;
+
 
 body {
   min-height: 100vh;
@@ -26,7 +29,7 @@ header {
   align-items: center;
   padding: 0 16px;
   text-transform: uppercase;
-  background-color: white;
+  background-color: #ffffff;
 }
 header h1 {
   font-size: 28px;
@@ -95,11 +98,11 @@ header h1 {
   font-weight: normal;
 }
 .resume__title a {
-  color: #505050;
+  color: $color-text;
 }
 
 .resume__title a:hover {
-  color: #262626;
+  color: darken($color-text, 20%);
 }
 
 .resume-list {
@@ -124,7 +127,7 @@ header h1 {
 }
 .resume__content {
   font-size: 14px;
-  color: #808080;
+  color: $color-text-light;
 }
 
 .resume {
@@ -133,14 +136,14 @@ header h1 {
   min-width: 280px;
   display: grid;
   grid-template-rows: 180px 70px 1fr 35px;
-  background-color: white;
+  background-color: #ffffff;
   margin-bottom: 90px;
 }
 
 /*********** Article **********/
 .article {
   max-width: 600px;
-  border: solid rgb(196, 196, 196) 1px;
+  border: solid #c4c4c4 1px;
   border-radius: 4px;
   margin: 20px auto;
   flex: 1;
@@ -151,7 +154,7 @@ header h1 {
 }
 .article__date,
 .article__title {
-  color: #505050;
+  color: $color-text;
 }
 .article_title {
   font-weight: 600;
@@ -173,7 +176,7 @@ header h1 {
 }
 .article__content {
   font-size: 16px;
-  color: #808080;
+  color: $color-text-light;
 }
 
 /********** filters **********/
@@ -189,11 +192,11 @@ header h1 {
   border-radius: 12px;
   padding: 2px 12px;
   margin: 4px;
-  background-color: white;
+  background-color: #ffffff;
 }
 .filter__button:hover {
   background-color: $color-primary;
-  color: white;
+  color: #ffffff;
   cursor: pointer;
 }
 
