@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./index.scss";
 
 import Header from "./components/Header";
-import News from "./components/News";
-import Article from "./components/Article";
+import News from "./pages/News";
+import Article from "./pages/Article";
 
 function App() {
   return (

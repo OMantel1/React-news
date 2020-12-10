@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom'
-import ErrorMsg from "./ErrorMsg";
-import LoadingMsg from "./LoadingMsg";
+import ErrorMsg from "../components/ErrorMsg";
+import LoadingMsg from "../components/LoadingMsg";
 
 class Article extends React.Component {
   constructor(props) {

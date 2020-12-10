@@ -1,7 +1,7 @@
 import React from "react";
-import ArticleResume from "./ArticleResume";
-import ErrorMsg from "./ErrorMsg";
-import LoadingMsg from "./LoadingMsg";
+import ArticleResume from "../components/ArticleResume";
+import ErrorMsg from "../components/ErrorMsg";
+import LoadingMsg from "../components/LoadingMsg";
 
 class News extends React.Component {
   constructor(props) {
